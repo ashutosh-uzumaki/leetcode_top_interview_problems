@@ -1,5 +1,5 @@
 package two_pointers;
-
+import java.util.*;
 public class ThreeSum {
     class Solution {
         public List<List<Integer>> threeSum(int[] nums) {
@@ -37,3 +37,5 @@ public class ThreeSum {
     }
     
 }
+
+//MISTAKE -> I SKIPPED THE DUPLICATE VALUE FOR FIRST NUMBER, BUT DID'NT DO FOR THE SECOND AND THIRD NUMBER.
