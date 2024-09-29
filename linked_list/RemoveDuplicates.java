@@ -28,3 +28,5 @@ class Solution {
     }
 }
 }
+
+//mistake -> FORGOT TO DO TAIL.NEXT = NULL
