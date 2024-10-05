@@ -22,6 +22,5 @@ public class BalancedBinaryTree {
             balancedTree = Math.abs(leftHeight - rightHeight) <= 1 ? balancedTree && true : balancedTree && false;
             return Math.max(leftHeight, rightHeight) + 1;
         }
-    }
-     
+    }   
 }
