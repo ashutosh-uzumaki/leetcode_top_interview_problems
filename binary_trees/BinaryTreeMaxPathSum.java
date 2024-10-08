@@ -22,3 +22,5 @@ public class BinaryTreeMaxPathSum {
         }
     }
 }
+
+// MISTAKE - forgot to add Math.max(0, helper()) -> instead I did only helper()
