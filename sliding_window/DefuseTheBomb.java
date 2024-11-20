@@ -36,3 +36,6 @@ public class DefuseTheBomb {
         }
     }
 }
+
+// FOR -VE K START = N - MATH.ABS(K) AS FOR PREVIOUS K ELEMENTS THE ELEMENTS START FROM N-1, N-2, N-3 ... K
+// WHY WINDOWSUM += CODE[(J+1) % N] -> J MARKS THE END OF CURRENT WINDOW.
