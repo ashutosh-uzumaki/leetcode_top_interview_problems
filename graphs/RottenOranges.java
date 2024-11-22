@@ -64,3 +64,5 @@ class Solution {
     }
 }
 }
+
+//MISTAKE - INSTEAD OF CHECKING FOR NROW, NCOL I WAS CHECKING FOR ROW, COL
