@@ -1,3 +1,4 @@
+package maths;
 public class TrailingZeros {
     class Solution {
         public int trailingZeroes(int n) {
