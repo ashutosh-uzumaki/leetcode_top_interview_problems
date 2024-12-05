@@ -2,46 +2,39 @@ package dynamic_programming;
 
 import java.util.Arrays;
 
-public class EggDropping {
-    class Solution {
-    int[] dp;
-    public int coinChange(int[] coins, int amount) {
-        int n = coins.length;
-        dp = new int[amount + 1];
-        Arrays.fill(dp, -1);
-
-        int ans = coinChangeHelper(amount, coins);
-        if(ans == Integer.MAX_VALUE){
-            return -1;
-        }
-
-        return ans;
-        
-    }
-
-    public int coinChangeHelper(int amount, int[] coins){
-        if(amount == 0){
-            return 0;
-        }
-
-        if(dp[amount] != -1){
-            return dp[amount];
-        }
-
-        int minCoins = Integer.MAX_VALUE;
-
-        for(int i=0; i<coins.length; i++){
-            if(amount - coins[i] >= 0){
-                minCoins = Math.min(minCoins, coinChangeHelper(amount - coins[i], coins));
+class Solution {
+    // Function to find minimum number of attempts needed in
+    // order to find the critical floor.
+    static int[][] memo;
+    static int eggDrop(int n, int k) {
+        // Your code here
+        memo = new int[105][105];
+        for(int i=0; i<=104; i++){
+            for(int j=0; j<=104; j++){
+                memo[i][j] = -1;
             }
         }
-
-        if(minCoins < Integer.MAX_VALUE){
-            minCoins += 1;
-        }
-
-        return dp[amount] = minCoins;
+        return helper(n, k);
     }
-
-}
+    
+    static int helper(int n, int k){
+        if(n == 1 || k == 0 || k == 1){
+            return k;
+        }
+        if(memo[n][k] != -1){
+            return memo[n][k];
+        }
+        
+        int moves = (int)1e9;
+        for(int i=1; i <= k; i++){
+            int breaks = helper(n - 1, i - 1);
+            int doesNotBreak = helper(n, k - i);
+            
+            int opsTaken = 1 + Math.max(breaks, doesNotBreak);
+            moves = Math.min(moves, opsTaken);
+            
+        }
+        
+        return memo[n][k] = moves;
+    }
 }
