@@ -1,5 +1,5 @@
 package stacks;
-
+import java.util.*;
 public class SumOfSubarrayRanges {
     class Solution {
         public long subArrayRanges(int[] nums) {
