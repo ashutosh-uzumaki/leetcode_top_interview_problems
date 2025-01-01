@@ -1,3 +1,4 @@
+package sliding_window;
 public class MaxSumOfTwoNonOverlappingSubarrays {
     class Solution {
         public int maxSumTwoNoOverlap(int[] nums, int firstLen, int secondLen) {

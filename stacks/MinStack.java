@@ -12,9 +12,9 @@ public class MinStack {
         }
     }
     
-    class MinStack {
+    class MinStacks {
         Stack<Pair> st;
-        public MinStack() {
+        public MinStacks() {
             st = new Stack<>();
         }
         
