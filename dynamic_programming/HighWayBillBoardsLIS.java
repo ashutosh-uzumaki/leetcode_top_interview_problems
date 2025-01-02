@@ -31,3 +31,37 @@ class Solution {
 }
 
 }
+
+
+//ONE FOR LOOP
+//WITH M AS FOR LOOP
+ 
+class Solution {
+
+	public static int highwayBillboard(int[] billboards, int[] revenue, int m, int x) {
+	 	// Write your code here.
+		 HashMap<Integer, Integer> mp = new HashMap<>();
+		 for(int i=0; i<billboards.length; i++){
+			 mp.put(billboards[i], revenue[i]);
+		 }
+
+		 int[] dp = new int[m + 1];
+		 int maxPossible = Integer.MIN_VALUE;
+		 for(int i=1; i<=m; i++){
+			 if(!mp.containsKey(i)){
+				 dp[i] = dp[i - 1];
+			 }else{
+				 int boardNotInstalled = dp[i - 1];
+				 int boardInstalled = mp.get(i);
+				 if(i >= x + 1){
+					 boardInstalled += dp[i - x - 1];
+				 }
+				 dp[i] = Math.max(boardInstalled, boardNotInstalled); 
+			 }
+			maxPossible = Math.max(maxPossible, dp[i]);
+		 }
+
+		 return maxPossible;
+	}
+
+}
