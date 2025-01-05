@@ -1,3 +1,4 @@
+package strings;
 public class ShiftingLetters {
     class Solution {
         public String shiftingLetters(String s, int[][] shifts) {
