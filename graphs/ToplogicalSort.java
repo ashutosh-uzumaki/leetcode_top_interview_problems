@@ -40,3 +40,5 @@ public class ToplogicalSort {
     }
 }
 }
+
+//DETECT CYCLE IN DIRECTED GRAPH USING BFS => KAHN'S ALGORITHM(TOPOLOGICAL SORT)
